@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ubicapp.Paginas.ProfesoresPage"
+             Title="Profesores">
+             <!--xmlns:VM="clr-namespace:Ubicapp.VistaModelo"-->
+<!--  <ContentPage.BindingContext>
+ <VM:ProfesoresVistaModelo/>
+ </ContentPage.BindingContext>-->
+  <!--<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
+
+  <StackLayout>
+    <StackLayout>
+      <Label Text="Selecciona o busca algún profesor" HorizontalTextAlignment="Center" FontSize="Medium"></Label>
+    
+      <!--<Grid>-->
+        <!--https://forums.xamarin.com/discussion/45971/listview-data-binding-in-xaml-->
+        <!--https://developer.xamarin.com/guides/xamarin-forms/user-interface/listview/customizing-cell-appearance/-->
+        <!--<Image Source="icon.png"></Image>
+        <Image x:Name="imgPrueba"></Image>
+        <ActivityIndicator BindingContext="{x:Reference imgPrueba}" IsRunning="{Binding IsLoading}"></ActivityIndicator>-->
+        <!--<Grid.ColumnDefinitions></Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
+        <Grid.RowDefinitions></Grid.RowDefinitions>
+    
+        <Entry x:Name="txtBuscar" Placeholder="Buscar" Completed="BtnBuscarClicked" Grid.Row="0" Grid.Column="0"></Entry>
+        <Button x:Name="btnBuscar" Text="Buscar" Clicked="BtnBuscarClicked" Grid.Row="0" Grid.Column="1"></Button>
+      </Grid>-->
+    
+      <SearchBar x:Name="sbBuscar" Placeholder="Buscar"></SearchBar>
+    
+      <!--<Button Text="Sincronizar" Command="{Binding GetProfesoresCommand}"/>-->
+      <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
+      <ListView x:Name="ListViewProfesores" ItemsSource="{Binding Profesores}" >
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout Spacing="0">
+                <Label Text="{Binding NombreCompleto}" VerticalTextAlignment="Center" FontSize="15"></Label>
+                <ContentView BackgroundColor="#0E8C80" Padding="2"></ContentView>
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    
+      <!--<ListView x:Name="listaProfesores" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout Orientation="Vertical">-->
+                <!--<Image x:Name="Foto" HeightRequest="20" WidthRequest="20" Source="{Binding Foto}"></Image>-->
+                <!--<ActivityIndicator BindingContext="{x:Reference Foto}" IsRunning="{Binding IsLoading}"></ActivityIndicator>-->
+                <!--<Label Text="{Binding Nombre}"></Label>-->
+                <!--<Label Text="{Binding Correo}"></Label>-->
+              <!--</StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>-->
+    </StackLayout>
+  </StackLayout>
+
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Actualizar" Order="Secondary" Clicked="ActualizarClicked" />
+    <ToolbarItem Text="Guardar" Order="Secondary" Clicked="GuardarClicked" />
+    <ToolbarItem Text="Otras opciones" Order="Secondary" Clicked="OtrasOpcionesClicked" />
+  </ContentPage.ToolbarItems>
+</ContentPage>

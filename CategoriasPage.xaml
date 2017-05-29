@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ubicapp.Paginas.CategoriasPage">
+  <!--<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
+
+  <ScrollView>
+    <StackLayout>
+      <Label Text="Selecciona el horario por profesor o nivel" HorizontalTextAlignment="Center" FontSize="Medium"></Label>
+    
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="200" />
+          <RowDefinition Height="*" />
+          <!--<RowDefinition Height="200" />
+          <RowDefinition Height="*" />-->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+      
+        <Button x:Name="btnProfesores" Text="P" Grid.Row="0" Grid.Column="0" BackgroundColor="#0e8c80" TextColor="White" FontSize="25" FontAttributes="Bold" Margin="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
+        <Label Text="Profesores" FontSize="18" Grid.Row="1" Grid.Column="0" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+
+        <Button x:Name="btnCarrerasProfesionales" Text="CP" Grid.Row="0" Grid.Column="1" BackgroundColor="#0e8c80" TextColor="White" FontSize="25" FontAttributes="Bold" Margin="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
+        <Label Text="Carreras Profesionales" FontSize="18" Grid.Row="1" Grid.Column="1" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+        
+        <!--<Button x:Name="btnBachilleratoIncluyente" Text="BI" Grid.Row="0" Grid.Column="1" BackgroundColor="#0e8c80" TextColor="White" FontSize="25" FontAttributes="Bold" Margin="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
+        <Label Text="Bachillerato Incluyente" FontSize="18" Grid.Row="1" Grid.Column="1" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+        
+        <Button x:Name="btnCarrerasProfesionales" Text="CP" Grid.Row="2" Grid.Column="0" BackgroundColor="#0e8c80" TextColor="White" FontSize="25" FontAttributes="Bold" Margin="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
+        <Label Text="Carreras Profesionales" FontSize="18" Grid.Row="3" Grid.Column="0" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+        
+        <Button x:Name="btnDiplomadosyCursos" Text="DC" Grid.Row="2" Grid.Column="1" BackgroundColor="#0e8c80" TextColor="White" FontSize="25" FontAttributes="Bold" Margin="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
+        <Label Text="Diplomados y cursos" FontSize="18" Grid.Row="3" Grid.Column="1" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>-->
+        
+      </Grid>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

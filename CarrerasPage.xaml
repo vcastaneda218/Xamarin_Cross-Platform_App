@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ubicapp.Paginas.CarrerasPage"
+             Title="Carreras">
+  <!--<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
+
+  <StackLayout>
+    <StackLayout>
+      <Label Text="Selecciona o busca alguna carrera" HorizontalTextAlignment="Center" FontSize="Medium"></Label>
+
+      <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
+      <ListView x:Name="ListViewCarreras" ItemsSource="{Binding Carreras}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <!--<StackLayout Spacing="0">-->
+                <Label Text="{Binding Nombre}" VerticalTextAlignment="Center" FontSize="15"></Label>
+                <!--<ContentView BackgroundColor="#0E8C80" Padding="2"></ContentView>-->
+              <!--</StackLayout>-->
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>

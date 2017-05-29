@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ubicapp.Paginas.HorarioProfesorPage"
+             xmlns:dxGrid="clr-namespace:DevExpress.Mobile.DataGrid;assembly=DevExpress.Mobile.Grid.v16.2"
+             Title="Horario">
+  <!--<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
+
+  <StackLayout>
+    <Label x:Name="lblProfesor" VerticalTextAlignment="Center" FontSize="15"></Label>
+    
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      
+      <Button x:Name="btnLunes" Text="L" Grid.Row="0" Grid.Column="0" BackgroundColor="#0e8c80" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
+      <Button x:Name="btnMartes" Text="M" Grid.Row="0" Grid.Column="1" BackgroundColor="#0e8c80" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
+      <Button x:Name="btnMiercoles" Text="W" Grid.Row="0" Grid.Column="2" BackgroundColor="#0e8c80" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
+      <Button x:Name="btnJueves" Text="J" Grid.Row="0" Grid.Column="3" BackgroundColor="#0e8c80" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
+      <Button x:Name="btnViernes" Text="V" Grid.Row="0" Grid.Column="4" BackgroundColor="#0e8c80" TextColor="White" FontAttributes="Bold" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Button>
+    </Grid>
+    
+    <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
+    <dxGrid:GridControl x:Name="gridHorarioProfesor" ItemsSource="{Binding ElHorario}" AllowEditRows="False" AllowDeleteRows="False">
+      <dxGrid:GridControl.Columns>
+        <dxGrid:NumberColumn FieldName="Hora" Caption="Hora" ContentAlignment="Center" AllowSort="False" />
+        <dxGrid:TextColumn FieldName="Materia" Caption="Materia" ContentAlignment="Center" AllowSort="False" />
+        <dxGrid:TextColumn FieldName="Salon" Caption="Salón" ContentAlignment="Center" AllowSort="False" />
+      </dxGrid:GridControl.Columns>
+      
+      <dxGrid:GridControl.RightSwipeButtons>
+        <dxGrid:SwipeButtonInfo ButtonName="btnSwMostrarUbicacion" Caption="Mostrar ubicacion" BackgroundColor="Green" Width="150"/>
+      </dxGrid:GridControl.RightSwipeButtons>
+    </dxGrid:GridControl>
+  </StackLayout>
+</ContentPage>
